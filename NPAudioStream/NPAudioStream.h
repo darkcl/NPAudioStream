@@ -30,7 +30,7 @@ extern NSString * const NPAudioStreamCurrentTimeDidChangeNotification;
 extern NSString * const NPAudioStreamLoadedTimeRangeDidChangeNotification;
 
 
-@class NPAudioStream;
+@class NPAudioStream, NPQueuePlayer;
 
 /**
  `NPAudioStream` primarily augments Apple's `AVAudioQueuePlayer` class to better interface with a networked audio playlist with iPod-style controls.
@@ -100,6 +100,8 @@ typedef NS_ENUM(NSInteger, NPAudioStreamShuffleMode) {
 ///-------------------------
 /// @name Stream Controllers
 ///-------------------------
+
+@property (nonatomic, strong) NPQueuePlayer *player;
 
 /**
  The object that acts as the delegate of the audio stream.
